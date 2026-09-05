@@ -1,9 +1,12 @@
-mhf_questlists_reader is a c# form that allows you to manage questlist files.  
+# This repo owner was suzaku
 
-I'm sorry for so much bugs.
+Orginal repo : https://github.com/GrenderG/mhfz_quest_editor/
 
-# Todo
-- Load more values such as Equipments, skills, limitation etc.
+<img width="1584" height="1033" alt="image" src="https://github.com/user-attachments/assets/39a49b11-96b2-49e7-bf20-c6788132b5c5" />
+
+## EN
+
+mhf_questlists_editor is a c# form that allows you to manage questlist files.  
 
 # Before you use
 Below are some important tips for using this repo. Please read them at least once.  
@@ -25,6 +28,38 @@ Open `list_168.bin` with binary editor(eg.HxD) and check offset 01h. It's a numb
 
 # Build
 Don't forget to drop `Stored_Data` folder to the same path where exe created.
+
+
+## Chinese 
+
+mhf_questlists_editor 是一個 C# 表單程式，可用於管理任務列表（questlist）檔案。
+
+## 使用須知
+以下是使用此專案的一些重要提示，請至少閱讀一遍。
+
+本讀取器可能無法正確讀取公開分享的任務列表檔案，因為其結構不正確。基於技術原因，讀取器並不支援這種格式，因此不建議直接使用。修復方法如下：
+
+使用十六進位編輯器（如 HxD）開啟 list_168.bin 並檢查偏移量（offset）01h。這是該檔案載入的任務數量。如果顯示為 13，請將其更改為 0D；因為 list_168.bin 總共有 13 個任務，在十六進位中應表示為 0D，但不知為何其值被寫成了十進位的 13。
+
+在新增新任務之前，強烈建議先從 list_168.bin 中刪除這些任務。
+
+在使用「新增（Add）」按鈕之前，您需要先使用名為 ReFrontier 的工具對任務檔案本身進行解密。
+
+![image](https://user-images.githubusercontent.com/89909040/161503024-52d490b4-1a5c-4ead-a501-85fad5a7457d.png)
+
+每個任務列表檔案最多可包含 42 個任務。
+
+雖然您可以向列表中新增新任務，但無法透過編輯器新增新的列表檔案。因此，建議您不要刪除某個列表檔案中的所有任務，請至少在列表中保留一個任務。
+
+「匯出（Export）」按鈕會建立新的任務列表檔案；如果存在同名檔案，則會直接覆蓋。
+
+「儲存變更（Save change）」按鈕用於儲存目前所選任務的修改。
+
+## 已知問題
+有時「刪除（Delete）」按鈕無法正常工作。
+
+## 建置說明
+請記得將 Stored_Data 資料夾放到與生成的 exe 檔相同的路徑下。
 
 # Changelog
 
